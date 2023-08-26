@@ -1,12 +1,13 @@
-import { Auth } from '@/auth/views/Auth';
+import { BrowserRouter } from 'react-router-dom';
+
+import { MainRouter } from './routes';
 
 
 function App() {
   return (
-    <>
-      <h1>From App</h1>
-      <Auth />
-    </>
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
   )
 }
 
