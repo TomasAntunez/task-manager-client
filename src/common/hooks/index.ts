@@ -1,0 +1,2 @@
+
+export { useGlobalContext } from './useGlobalContext';
