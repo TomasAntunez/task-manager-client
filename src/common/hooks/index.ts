@@ -1,2 +1,2 @@
 
-export { useGlobalContext } from './useGlobalContext';
+export { useGlobalStores } from './useGlobalStores';

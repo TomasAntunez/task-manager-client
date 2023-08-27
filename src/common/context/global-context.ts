@@ -1,10 +1,12 @@
-import { createContext, Dispatch } from 'react';
+import { Dispatch, createContext } from 'react';
 
 import { AuthAction, AuthState } from '@/auth/common/store';
 
+import { Stores } from '../store';
+
 
 export interface GlobalContextProps {
-  authStore: [AuthState, Dispatch<AuthAction>]
+  [Stores.AUTH]: [AuthState, Dispatch<AuthAction>]
 }
 
 export const GlobalContext = createContext<GlobalContextProps | null>(null);

@@ -1,7 +1,7 @@
 import { Reducer } from 'react';
 
 import { AuthState } from './auth-state';
-import { AuthAction, AuthActionsTypes } from './auth-actions';
+import { AuthAction, AuthActionsTypes } from './auth-action';
 
 
 export const AuthReducer: Reducer<AuthState, AuthAction> = (state, action) => {
@@ -16,6 +16,7 @@ export const AuthReducer: Reducer<AuthState, AuthAction> = (state, action) => {
 
     case AuthActionsTypes.AUTHENTICATE:
       return {
+        ...state,
         isLoading: false,
         isAuthenticated: true
       };

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { GlobalContext } from '../context';
 
 
-export const useGlobalContext = () => {
+export const useGlobalStores = () => {
   const context = useContext(GlobalContext);
 
   if (!context) throw new Error('No GlobalContext');

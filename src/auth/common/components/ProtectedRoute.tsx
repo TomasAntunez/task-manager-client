@@ -4,12 +4,12 @@ import { Outlet, Navigate } from 'react-router-dom';
 import { MainRoutes } from '@/routes';
 import { AuthRoutes } from '@/auth/routes';
 
-import { useAuth } from '../hooks';
+import { useAuthStore } from '../hooks';
 
 
 export const ProtectedRoute: FC<{}> = () => {
 
-  const [{ isAuthenticated }] = useAuth();
+  const [{ isAuthenticated }] = useAuthStore();
 
   return (
     isAuthenticated
