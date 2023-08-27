@@ -3,7 +3,7 @@ import { FC, useReducer } from 'react';
 import { AuthReducer, authInitialState } from '@/auth/common/store';
 
 import { GlobalContext } from './global-context';
-import { Stores } from '../store';
+import { GlobalStores } from '../store';
 
 
 interface GlobalProviderProps {
@@ -13,7 +13,7 @@ interface GlobalProviderProps {
 export const GlobalProvider: FC<GlobalProviderProps> = ({ children }) => {
 
   const stores = {
-    [Stores.AUTH]: useReducer(AuthReducer, authInitialState),
+    [GlobalStores.AUTH]: useReducer(AuthReducer, authInitialState),
   };
 
   return (

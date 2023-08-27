@@ -1,7 +1,7 @@
-import { Stores } from '@/common/store';
+import { GlobalStores } from '@/common/store';
 
 
-const store = Stores.AUTH;
+const store = GlobalStores.AUTH;
 
 export enum AuthActionsTypes {
   START_LOADING = store + '/start-loading',

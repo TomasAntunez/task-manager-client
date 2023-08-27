@@ -1,4 +1,4 @@
 import { useGlobalStores } from '@/common/hooks';
-import { Stores } from '@/common/store';
+import { GlobalStores } from '@/common/store';
 
-export const useAuthStore = () => useGlobalStores()[Stores.AUTH];
+export const useAuthStore = () => useGlobalStores()[GlobalStores.AUTH];

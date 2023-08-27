@@ -1,2 +1,2 @@
 
-export { Stores } from './store-types';
+export { GlobalStores } from './global-stores';
