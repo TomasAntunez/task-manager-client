@@ -8,7 +8,7 @@ import { TasksPage } from '@/tasks/common/views';
 import { MainRoutes } from './routes';
 
 
-export const MainRouter: FC<{}> = () => {
+export const MainRouter: FC = () => {
   return (
     <Routes>
       <Route path={ MainRoutes.AUTH + '/*' } element={ <AuthRouter /> } />

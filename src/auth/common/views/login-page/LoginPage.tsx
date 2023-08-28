@@ -6,7 +6,7 @@ import { MainRoutes } from '@/routes';
 import { AuthRoutes } from '@/auth/routes';
 
 
-export const LoginPage: FC<{}> = () => {
+export const LoginPage: FC = () => {
 
   return (
     <>

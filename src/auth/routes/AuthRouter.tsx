@@ -6,7 +6,7 @@ import { AuthLayout, LoginPage, RegisterPage } from '../common/views';
 import { AuthRoutes } from './auth-routes';
 
 
-export const AuthRouter: FC<{}> = () => {
+export const AuthRouter: FC = () => {
   return (
     <Routes>
       <Route element={<AuthLayout />}>

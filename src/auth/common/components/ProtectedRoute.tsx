@@ -7,9 +7,9 @@ import { AuthRoutes } from '@/auth/routes';
 import { useAuthStore } from '../hooks';
 
 
-export const ProtectedRoute: FC<{}> = () => {
+export const ProtectedRoute: FC = () => {
 
-  const [{ isAuthenticated }] = useAuthStore();
+  const { state: { isAuthenticated } } = useAuthStore();
 
   return (
     isAuthenticated

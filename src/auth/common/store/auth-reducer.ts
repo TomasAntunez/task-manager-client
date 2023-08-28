@@ -1,20 +1,20 @@
 import { Reducer } from 'react';
 
 import { AuthState } from './auth-state';
-import { AuthAction, AuthActionsTypes } from './auth-action';
+import { AuthAction, AuthActionTypes } from './auth-action';
 
 
-export const AuthReducer: Reducer<AuthState, AuthAction> = (state, action) => {
+export const authReducer: Reducer<AuthState, AuthAction> = (state, action) => {
 
   switch (action.type) {
 
-    case AuthActionsTypes.START_LOADING:
+    case AuthActionTypes.START_LOADING:
       return {
         ...state,
         isLoading: true
       };
 
-    case AuthActionsTypes.AUTHENTICATE:
+    case AuthActionTypes.AUTHENTICATE:
       return {
         ...state,
         isLoading: false,

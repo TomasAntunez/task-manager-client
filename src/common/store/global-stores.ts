@@ -1,5 +1,5 @@
 
 export enum GlobalStores {
   AUTH = 'auth',
-  // ALERT = 'alert'
+  USER = 'user'
 }

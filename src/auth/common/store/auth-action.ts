@@ -3,11 +3,11 @@ import { GlobalStores } from '@/common/store';
 
 const store = GlobalStores.AUTH;
 
-export enum AuthActionsTypes {
+export enum AuthActionTypes {
   START_LOADING = store + '/start-loading',
   AUTHENTICATE = store + '/authenticate'
 }
 
 export type AuthAction =
-  | { type: AuthActionsTypes.START_LOADING }
-  | { type: AuthActionsTypes.AUTHENTICATE }
+  | { type: AuthActionTypes.START_LOADING }
+  | { type: AuthActionTypes.AUTHENTICATE }

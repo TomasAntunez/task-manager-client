@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Container, Grid } from '@mui/material';
 
 
-export const AuthLayout: FC<{}> = () => {
+export const AuthLayout: FC = () => {
   return (
     <Container>
       <Grid container
