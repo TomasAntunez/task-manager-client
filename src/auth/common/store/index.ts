@@ -1,4 +1,4 @@
 
-export { authInitialState, type AuthState } from './auth-state';
+export { type AuthState, authInitialState } from './auth-state';
+export { authReducer } from './auth-reducer';
 export { type AuthAction, AuthActionTypes } from './auth-action';
-export { useAuthReducer } from './auth-store';

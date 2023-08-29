@@ -8,18 +8,17 @@ export const authReducer: Reducer<AuthState, AuthAction> = (state, action) => {
 
   switch (action.type) {
 
-    case AuthActionTypes.START_LOADING:
-      return {
-        ...state,
-        isLoading: true
-      };
-
     case AuthActionTypes.AUTHENTICATE:
       return {
         ...state,
-        isLoading: false,
         isAuthenticated: true
       };
+
+    case AuthActionTypes.REMOVE_AUTH:
+      return {
+        ...state,
+        isAuthenticated: false
+      }
 
     default:
       return state;

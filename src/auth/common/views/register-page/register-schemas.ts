@@ -14,7 +14,6 @@ export const initialValues: RegisterSchema = {
   password: ''
 };
 
-
 export const validationSchema: ObjectSchema<RegisterSchema> = object({
   email: string()
     .required('Email is required')

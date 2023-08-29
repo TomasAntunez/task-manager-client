@@ -1,13 +1,9 @@
-import { GlobalStores } from '@/common/store';
-
-
-const store = GlobalStores.AUTH;
 
 export enum AuthActionTypes {
-  START_LOADING = store + '/start-loading',
-  AUTHENTICATE = store + '/authenticate'
+  AUTHENTICATE = 'auth/authenticate',
+  REMOVE_AUTH = 'auth/remove-auth'
 }
 
 export type AuthAction =
-  | { type: AuthActionTypes.START_LOADING }
   | { type: AuthActionTypes.AUTHENTICATE }
+  | { type: AuthActionTypes.REMOVE_AUTH }

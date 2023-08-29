@@ -1,16 +1,13 @@
-import { BrowserRouter } from 'react-router-dom';
-
-import { GlobalProvider } from './common/context';
 import { MainRouter } from './routes';
+
+import { AuthProvider } from './auth/common/context';
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <GlobalProvider>
-        <MainRouter />
-      </GlobalProvider>
-    </BrowserRouter>
+    <AuthProvider>
+      <MainRouter />
+    </AuthProvider>
   )
 }
 

@@ -11,6 +11,12 @@ export const userReducer: Reducer<UserState, UserAction> = (state, action) => {
     case UserActionTypes.CREATE_USER:
       return action.payload;
 
+    case UserActionTypes.MODIFY_USER:
+      return {
+        ...state,
+        ...action.payload
+      };
+
     case UserActionTypes.REMOVE_USER:
       return userInitialState;
 

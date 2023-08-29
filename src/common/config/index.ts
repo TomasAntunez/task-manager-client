@@ -1,2 +1,2 @@
 
-export { ThemeProvider } from './theme';
+export { darkTheme } from './theme';

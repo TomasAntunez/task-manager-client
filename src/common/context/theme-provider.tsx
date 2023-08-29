@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
 
-import { darkTheme } from './dark-theme';
+import { darkTheme } from '../config';
 
 
 interface ThemeProviderProps {
