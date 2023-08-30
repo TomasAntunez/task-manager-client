@@ -19,11 +19,12 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   
   const authServices = useAuthServices(authDispatch, userDispatch);
 
-  const getAuth = authServices.getAuth;
+  
+  const checkAuth = authServices.getAuth;
 
   useEffect( () => {
-    getAuth();
-  }, [getAuth]);
+    checkAuth();
+  }, [checkAuth]);
 
 
   const authStateValue: AuthStateContextProps = {

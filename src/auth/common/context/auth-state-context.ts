@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 
-import { AuthState } from '../store';
 import { UserState } from '@/user/common/store';
+
+import { AuthState } from '../store';
 
 
 export interface AuthStateContextProps {

@@ -11,8 +11,6 @@ export const ProtectedRoute: FC = () => {
 
   const { auth: { isAuthenticated } } = useAuthState();
 
-  console.log({ isAuthenticated });
-
   return (
     isAuthenticated
       ? <Outlet />

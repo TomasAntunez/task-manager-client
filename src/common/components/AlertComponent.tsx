@@ -1,8 +1,30 @@
 import { FC } from 'react';
+import { Snackbar, Alert, AlertColor, Typography } from '@mui/material';
 
 
-export const AlertComponent: FC = () => {
+interface AlertComponentProps {
+  open          : boolean;
+  msg           : string;
+  severity?     : AlertColor;
+  handleClose() : void;
+}
+
+export const AlertComponent: FC<AlertComponentProps> = ({
+  open, msg, severity, handleClose
+}) => {
   return (
-    <h3>From Alert</h3>
+    <Snackbar
+      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      autoHideDuration={ 6000 }
+      open={ open }
+      onClose={ handleClose }
+    >
+      <Alert
+        onClose={ handleClose }
+        severity={ severity }
+      >
+        <Typography>{ msg }</Typography>
+      </Alert>
+    </Snackbar>
   )
 };

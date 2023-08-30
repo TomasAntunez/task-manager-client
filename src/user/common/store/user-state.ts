@@ -6,7 +6,7 @@ export interface UserState {
 }
 
 
-export const userInitialState = {
+export const userInitialState: UserState = {
   id: '',
   email: '',
   username: '',

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { AuthRouter } from '@/auth/routes';
 import { ProtectedRoute } from '@/auth/common/components';
@@ -16,16 +16,14 @@ export const MainRouter: FC = () => {
   if (isLoading) return 'Loading...';
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={ MainRoutes.AUTH + '/*' } element={ <AuthRouter /> } />
+    <Routes>
+      <Route path={ MainRoutes.AUTH + '/*' } element={ <AuthRouter /> } />
 
-        <Route element={ <ProtectedRoute /> }>
-          <Route path={ MainRoutes.TASKS } element={ <TasksPage /> } />
-        </Route>
+      <Route element={ <ProtectedRoute /> }>
+        <Route path={ MainRoutes.TASKS } element={ <TasksPage /> } />
+      </Route>
 
-        <Route path='*' element={ <Navigate to={MainRoutes.TASKS} /> } />
-      </Routes>
-    </BrowserRouter>
+      <Route path='*' element={ <Navigate to={MainRoutes.TASKS} /> } />
+    </Routes>
   )
 }

@@ -27,6 +27,11 @@ export const darkTheme = createTheme({
           boxShadow: 'none'
         }
       }
+    },
+    MuiAlert: {
+      defaultProps: {
+        variant: 'filled'
+      }
     }
   }
 });

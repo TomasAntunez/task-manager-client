@@ -1,4 +1,4 @@
-import { Dispatch, useState, useCallback } from 'react';
+import { Dispatch, useCallback, useState } from 'react';
 
 import { UserAction, UserActionTypes } from '@/user/common/store';
 
@@ -27,17 +27,19 @@ export const useAuthServices = (
 
   const register: Register = async () => {
     setIsLoading(true);
-
     try {
       const { id, email, username } = registerResponse;
-      throw new Error();
-    
+
+      throw Error('error');
+  
       setSession({ id, email, username });
       setIsLoading(false);
 
+      return {};
+
     } catch (error) {
       setIsLoading(false);
-      return new Error('register error');
+      return { error };
     }
   };
 
@@ -49,13 +51,14 @@ export const useAuthServices = (
       const { id, email, username } = loginResponse;
 
       setSession({ id, email, username });
-      setIsLoading(false)
+      setIsLoading(false);
+
+      return {};
 
     } catch (error) {
       setIsLoading(false);
-      return new Error('login error');
+      return { error };
     }
-
   };
   
 
@@ -65,20 +68,20 @@ export const useAuthServices = (
     try {
       const { id, email, username } = getAuthResponse;
 
+      throw Error('getAuth error');
+
       authDispatch({ type: AuthActionTypes.AUTHENTICATE });
       userDispatch({
         type: UserActionTypes.MODIFY_USER,
         payload: { id, email, username }
-      }),
-      
-      setIsLoading(false)
+      });
 
     } catch (error) {
       authDispatch({ type: AuthActionTypes.REMOVE_AUTH });
-
-      setIsLoading(false);
-      return new Error('getAuth error');
     }
+
+    setIsLoading(false);
+
   }, [authDispatch, userDispatch]);
 
 
