@@ -5,8 +5,13 @@ import { Box, Button, Paper, TextField, Typography } from '@mui/material';
 import { MainRoutes } from '@/routes';
 import { AuthRoutes } from '@/auth/routes';
 
+import { useLoginForm } from './useLoginForm';
+
 
 export const LoginPage: FC = () => {
+
+  const { formik } = useLoginForm();
+
 
   return (
     <>
@@ -18,9 +23,29 @@ export const LoginPage: FC = () => {
         paddingY: 3,
         marginTop: 5
       }}>
-        <form>
-          <TextField type='text' label="Username" fullWidth />
-          <TextField type='password' label="Password" fullWidth />
+        <form onSubmit={formik.handleSubmit}>
+          <TextField
+            name='email'
+            type='text'
+            label="Email"
+            fullWidth
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+          <TextField
+            name='password'
+            type='password'
+            label="Password"
+            fullWidth
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+          />
 
           <Box display='flex' justifyContent='space-between' marginTop={1}>
 
@@ -30,7 +55,7 @@ export const LoginPage: FC = () => {
               </Button>
             </Link>
 
-            <Button>
+            <Button type='submit'>
               Sign In
             </Button>
             

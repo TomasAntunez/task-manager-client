@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { FormikHelpers, useFormik } from 'formik';
 
 import { MainRoutes } from '@/routes';
-import { useAlertDispatch } from '@/common/hooks';
-import { AlertActionTypes } from '@/common/store';
 
 import { useAuthServices } from '../../hooks';
 import { initialValues, validationSchema, RegisterSchema } from './register-schemas';
@@ -12,7 +10,6 @@ import { initialValues, validationSchema, RegisterSchema } from './register-sche
 export const useRegisterForm = () => {
 
   const navigate = useNavigate();
-  const alertDispatch = useAlertDispatch();
 
   const { register } = useAuthServices();
 
@@ -24,11 +21,7 @@ export const useRegisterForm = () => {
     const { error } = await register(registerSchema);
 
     if (error) { // Example
-      const errorMessage = 'That email already exists'
-      alertDispatch({
-        type: AlertActionTypes.SHOW_ERROR,
-        payload: errorMessage
-      });
+      const errorMessage = 'That email already exists';
       formikBag.setFieldError('email', errorMessage);
       return;
     }
@@ -39,7 +32,7 @@ export const useRegisterForm = () => {
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: (values, formikBag) => registerUser(values, formikBag)
+    onSubmit: registerUser
   });
 
   return { formik };

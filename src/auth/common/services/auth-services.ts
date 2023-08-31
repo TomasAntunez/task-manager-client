@@ -29,8 +29,6 @@ export const useAuthServices = (
     setIsLoading(true);
     try {
       const { id, email, username } = registerResponse;
-
-      throw Error('error');
   
       setSession({ id, email, username });
       setIsLoading(false);
@@ -67,8 +65,6 @@ export const useAuthServices = (
 
     try {
       const { id, email, username } = getAuthResponse;
-
-      throw Error('getAuth error');
 
       authDispatch({ type: AuthActionTypes.AUTHENTICATE });
       userDispatch({
