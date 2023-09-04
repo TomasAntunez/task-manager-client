@@ -10,10 +10,10 @@ export const TasksPage: FC = () => {
       <TopBar />
       <Container>
         <Grid container>
-          <Grid item container xs={6}>
+          <Grid item container xs={6} display='flex' justifyContent='center'>
             <TaskForm />
           </Grid>
-          <Grid item container xs={6}>
+          <Grid item container xs={6} display='flex' justifyContent='center'>
             <TaskList />
           </Grid>
         </Grid>

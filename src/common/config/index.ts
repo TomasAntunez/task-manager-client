@@ -1,2 +1,2 @@
 
-export { darkTheme } from './theme';
+export { darkTheme, FontWeightPalette } from './theme';

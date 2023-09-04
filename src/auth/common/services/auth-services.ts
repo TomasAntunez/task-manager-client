@@ -3,8 +3,8 @@ import { Dispatch, useCallback, useState } from 'react';
 import { UserAction, UserActionTypes } from '@/user/common/store';
 
 import { AuthActionTypes, AuthAction } from '../store';
-import { AuthServices, Register, Login, GetAuth } from './auth-services-interface';
-import { SetSessionProps } from './auth-props-schemas';
+import { AuthServices, Register, Login, Logout, GetAuth } from './auth-services-interface';
+import { SetSessionParams } from './auth-props-schemas';
 import { registerResponse, getAuthResponse, loginResponse } from './mock';
 
 
@@ -16,7 +16,7 @@ export const useAuthServices = (
   const [ isLoading, setIsLoading ] = useState<boolean>(true);
 
 
-  const setSession = ({ id, email, username }: SetSessionProps) => {
+  const setSession = ({ id, email, username }: SetSessionParams) => {
     authDispatch({ type: AuthActionTypes.AUTHENTICATE });
     userDispatch({
       type: UserActionTypes.CREATE_USER,
@@ -58,7 +58,13 @@ export const useAuthServices = (
       return { error };
     }
   };
-  
+
+
+  const logout: Logout = () => {
+    authDispatch({ type: AuthActionTypes.REMOVE_AUTH });
+    userDispatch({ type: UserActionTypes.REMOVE_USER });
+  };
+
 
   const getAuth: GetAuth = useCallback( async () => {
     setIsLoading(true);
@@ -85,6 +91,7 @@ export const useAuthServices = (
     isLoading,
     register,
     login,
+    logout,
     getAuth
   }
 

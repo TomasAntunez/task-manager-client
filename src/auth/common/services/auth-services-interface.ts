@@ -1,13 +1,16 @@
 import { ServiceResult } from '@/common/services';
 
-import { LoginProps, RegisterProps } from "./auth-props-schemas";
+import { LoginParams, RegisterParams } from "./auth-props-schemas";
 
 
 export interface Register {
-  (props: RegisterProps): Promise<ServiceResult>;
+  (params: RegisterParams): Promise<ServiceResult>;
 }
 export interface Login {
-  (props: LoginProps): Promise<ServiceResult>;
+  (params: LoginParams): Promise<ServiceResult>;
+}
+export interface Logout {
+  (): void;
 }
 export interface GetAuth {
   (): Promise<void>;
@@ -17,5 +20,6 @@ export interface AuthServices {
   isLoading: boolean;
   register: Register
   login: Login;
+  logout: Logout;
   getAuth: GetAuth;
 }

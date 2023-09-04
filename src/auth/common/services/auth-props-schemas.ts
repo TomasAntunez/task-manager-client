@@ -1,14 +1,14 @@
 
-export type RegisterProps = LoginProps & {
+export type RegisterParams = LoginParams & {
   username: string;
 };
 
-export type LoginProps = {
+export type LoginParams = {
   email: string;
   password: string;
 }
 
-export type SetSessionProps = {
+export type SetSessionParams = {
   id: string;
   email: string;
   username: string;
