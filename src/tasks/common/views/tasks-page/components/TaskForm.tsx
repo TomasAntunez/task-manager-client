@@ -7,10 +7,10 @@ import { FontWeightPalette } from '@/common/config';
 export const TaskForm: FC = () => {
   return (
     <Paper sx={{
-      position: 'static',
-      width: '85%',
+      position: 'fixed',
+      width: '40%',
       paddingY: 4,
-      marginTop: '15%'
+      marginTop: '5%'
     }}>
       <form style={{
         display: 'flex',

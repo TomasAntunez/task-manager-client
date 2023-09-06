@@ -21,7 +21,7 @@ export const TopBar: FC = () => {
 
 
   return (
-    <AppBar position='static'>
+    <AppBar position='fixed'>
       <Toolbar>
         <Typography
           variant='h6'
@@ -32,9 +32,9 @@ export const TopBar: FC = () => {
           Task Manager
         </Typography>
 
-        <Button sx={{ marginRight: 3 }}>My Profile</Button>
+        <Button sx={{ marginRight: 3 }} variant='text'>My Profile</Button>
 
-        <Button onClick={signOff}>Sign Off</Button>
+        <Button onClick={signOff} variant='text'>Sign Off</Button>
       </Toolbar>
     </AppBar>
   );
