@@ -13,7 +13,9 @@ export const AlertProvider: FC<AlertProviderProps> = ({ children }) => {
 
   const [ alertState, alertDispatch ] = useReducer(alertReducer, alertInitialState);
 
-  const handleClose = () => alertDispatch({ type: AlertActionTypes.HIDE });
+  const handleClose = () => {
+    alertDispatch({ type: AlertActionTypes.HIDE })
+  };
 
 
   return (

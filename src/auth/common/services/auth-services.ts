@@ -1,10 +1,10 @@
 import { Dispatch, useCallback, useState } from 'react';
 
-import { UserAction, UserActionTypes } from '@/user/common/store';
+import { UserAction, UserActionTypes } from '@/home/user/common/store';
 
 import { AuthActionTypes, AuthAction } from '../store';
 import { AuthServices, Register, Login, Logout, GetAuth } from './auth-services-interface';
-import { SetSessionParams } from './auth-props-schemas';
+import { SetSessionParams } from './auth-params-schemas';
 import { registerResponse, getAuthResponse, loginResponse } from './mock';
 
 

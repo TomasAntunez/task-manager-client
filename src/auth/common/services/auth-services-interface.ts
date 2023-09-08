@@ -1,6 +1,6 @@
 import { ServiceResult } from '@/common/services';
 
-import { LoginParams, RegisterParams } from "./auth-props-schemas";
+import { LoginParams, RegisterParams } from "./auth-params-schemas";
 
 
 export interface Register {

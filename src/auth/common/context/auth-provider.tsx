@@ -1,6 +1,6 @@
 import { FC, useEffect, useReducer } from 'react';
 
-import { userReducer, userInitialState } from '@/user/common/store';
+import { userReducer, userInitialState } from '@/home/user/common/store';
 
 import { authReducer, authInitialState } from '../store';
 import { useAuthServices } from '../services';

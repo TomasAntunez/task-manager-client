@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { UserState } from '@/user/common/store';
+import { UserState } from '@/home/user/common/store';
 
 import { AuthState } from '../store';
 

@@ -1,5 +1,5 @@
 
 export enum MainRoutes {
+  HOME = '',
   AUTH = 'auth',
-  TASKS = 'tasks'
 }

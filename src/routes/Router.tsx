@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthRouter } from '@/auth/routes';
 import { ProtectedRoute } from '@/auth/common/components';
 import { useAuthServices } from '@/auth/common/hooks';
-import { TasksPage } from '@/tasks/common/views';
+import { HomeRouter } from '@/home/routes';
 
 import { MainRoutes } from './routes';
 
@@ -20,10 +20,10 @@ export const MainRouter: FC = () => {
       <Route path={ MainRoutes.AUTH + '/*' } element={ <AuthRouter /> } />
 
       <Route element={ <ProtectedRoute /> }>
-        <Route path={ MainRoutes.TASKS } element={ <TasksPage /> } />
+        <Route path={ MainRoutes.HOME + '/*' } element={ <HomeRouter /> } />
       </Route>
 
-      <Route path='*' element={ <Navigate to={MainRoutes.TASKS} /> } />
+      <Route path='*' element={ <Navigate to={MainRoutes.HOME} /> } />
     </Routes>
   )
 }
