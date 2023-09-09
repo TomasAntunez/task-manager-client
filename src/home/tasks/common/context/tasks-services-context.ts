@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
+import { TasksServices } from '../services';
 
-interface TasksServicesContextProps {}
 
-export const TasksServicesContext = createContext<TasksServicesContextProps | null>(null);
+export const TasksServicesContext = createContext<TasksServices | null>(null);

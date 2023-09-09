@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
+import { TasksState } from '../store';
 
-interface TasksStateContextProps {}
 
-export const TasksStateContext = createContext<TasksStateContextProps | null>(null);
+export const TasksStateContext = createContext<TasksState | null>(null);
