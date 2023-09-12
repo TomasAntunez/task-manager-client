@@ -9,10 +9,10 @@ export interface TaskState {
 
 export interface TasksState {
   tasks: Array<TaskState>;
-  taskInEdit: TaskId | null;
+  taskInEdition: TaskState | null;
 }
 
 export const tasksInitialState: TasksState = {
   tasks: [],
-  taskInEdit: null
+  taskInEdition: null
 }

@@ -17,14 +17,14 @@ export const tasksReducer: Reducer<TasksState, TasksAction> = (state, action) =>
     case TasksActionTypes.CREATE_TASK:
       return {
         ...state,
-        taskInEdit: null,
+        taskInEdition: null,
         tasks: [ ...state.tasks, action.payload ]
       };
 
     case TasksActionTypes.UPDATE_TASK:
       return {
         ...state,
-        taskInEdit: null,
+        taskInEdition: null,
         tasks: state.tasks.map( task => {
           if (task.id === action.payload.id) {
             return { ...task, ...action.payload };

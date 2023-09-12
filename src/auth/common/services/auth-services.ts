@@ -33,11 +33,9 @@ export const useAuthServices = (
       setSession({ id, email, username });
       setIsLoading(false);
 
-      return {};
-
     } catch (error) {
       setIsLoading(false);
-      return { error };
+      return error;
     }
   };
 
@@ -51,11 +49,9 @@ export const useAuthServices = (
       setSession({ id, email, username });
       setIsLoading(false);
 
-      return {};
-
     } catch (error) {
       setIsLoading(false);
-      return { error };
+      return error;
     }
   };
 

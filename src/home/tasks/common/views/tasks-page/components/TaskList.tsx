@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import { Box } from '@mui/material';
 
+import { useTasksState } from '../../../hooks';
 import { Task } from './Task';
 
 
 export const TaskList: FC = () => {
 
-  const tasks = [1, 2, 3, 4, 5, 6];
+  const { tasks } = useTasksState();
 
   return (
     <Box
@@ -18,7 +19,12 @@ export const TaskList: FC = () => {
       {
         (tasks.length !== 0) &&
           tasks.map( task => (
-            <Task key={task} />
+            <Task
+              key={task.id}
+              id={task.id}
+              title={task.title}
+              description={task.description}
+            />
           ))
       }
     </Box>

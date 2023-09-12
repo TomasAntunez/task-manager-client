@@ -1,13 +1,11 @@
-import { ServiceResult } from '@/common/services';
-
 import { LoginParams, RegisterParams } from "./auth-params-schemas";
 
 
 export interface Register {
-  (params: RegisterParams): Promise<ServiceResult>;
+  (params: RegisterParams): Promise<void | unknown>;
 }
 export interface Login {
-  (params: LoginParams): Promise<ServiceResult>;
+  (params: LoginParams): Promise<void | unknown>;
 }
 export interface Logout {
   (): void;

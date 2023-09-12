@@ -1,15 +1,13 @@
 import { v4 as uuid } from 'uuid';
 
-import { CreateTaskResponse, GetTasksResponse, UpdateTaskResponse } from './tasks-response-schemas';
 
+interface Task {
+  id: string;
+  title: string;
+  description: string
+}
 
-export const createTaskResponse: CreateTaskResponse = {
-  id: uuid(),
-  title: 'test1',
-  description: 'description test 1'
-};
-
-export const getTasksResponse: GetTasksResponse = [
+export const tasks: Task[] = [
   {
     id: uuid(),
     title: 'test1',
@@ -51,9 +49,3 @@ export const getTasksResponse: GetTasksResponse = [
     description: 'description test 8'
   }
 ];
-
-export const updateTaskResponse: UpdateTaskResponse = {
-  ...createTaskResponse,
-  title: 'test1 updated',
-  description: 'description test 1 updated'
-};

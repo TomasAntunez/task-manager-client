@@ -1,19 +1,17 @@
-import { ServiceResult } from '@/common/services';
-
-import { CreateTaskParams, UpdateTaskParams } from './tasks-params-schemas';
+import { CreateTaskParams, UpdateTaskParams } from './schemas';
 
 
 export interface GetTasks {
-  (): Promise<ServiceResult>;
+  (): Promise<void>;
 }
 export interface CreateTask {
-  (params: CreateTaskParams): Promise<ServiceResult>;
+  (params: CreateTaskParams): Promise<void>;
 }
 export interface UpdateTask {
-  (params: UpdateTaskParams): Promise<ServiceResult>;
+  (params: UpdateTaskParams): Promise<void>;
 }
 export interface RemoveTask {
-  (id: string): Promise<ServiceResult>;
+  (id: string): Promise<void>;
 }
 
 export interface TasksServices {

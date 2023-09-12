@@ -4,18 +4,24 @@ import { Card, CardContent, Divider, CardActions, Typography, Button, Box } from
 import { FontWeightPalette } from '@/common/config';
 
 
-export const Task: FC = () => {
+interface TaskProps {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export const Task: FC<TaskProps> = ({ title, description }) => {
   return (
     <Card sx={{ marginTop: 3 }}>
       <CardContent>
         <Typography align='center' fontWeight={FontWeightPalette.BOLD} marginBottom={1}>
-          Title
+          { title }
         </Typography>
 
         <Divider />
 
         <Typography align='justify' paddingX={1} paddingTop={2}>
-          Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description 
+          { description }
         </Typography>
       </CardContent>
       <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>

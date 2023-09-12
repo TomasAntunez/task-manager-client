@@ -3,6 +3,7 @@ import { FC, useReducer, useEffect } from 'react';
 import { tasksReducer, tasksInitialState } from '../store';
 import { useTasksServices } from '../services';
 import { TasksStateContext } from './tasks-state-context';
+import { TasksDispatchContext } from './tasks-dispatch-context';
 import { TasksServicesContext } from './tasks-services-context';
 
 
@@ -12,9 +13,9 @@ interface TasksProviderProps {
 
 export const TasksProvider: FC<TasksProviderProps> = ({ children }) => {
 
-  const [ tasksState ] = useReducer(tasksReducer, tasksInitialState);
+  const [ tasksState, tasksDispatch ] = useReducer(tasksReducer, tasksInitialState);
 
-  const tasksServices = useTasksServices();
+  const tasksServices = useTasksServices(tasksDispatch);
 
 
   const getTasks = tasksServices.getTasks;
@@ -26,9 +27,11 @@ export const TasksProvider: FC<TasksProviderProps> = ({ children }) => {
 
   return (
     <TasksStateContext.Provider value={tasksState}>
-      <TasksServicesContext.Provider value={tasksServices}>
-        { children }
-      </TasksServicesContext.Provider>
+      <TasksDispatchContext.Provider value={tasksDispatch}>
+        <TasksServicesContext.Provider value={tasksServices}>
+          { children }
+        </TasksServicesContext.Provider>
+      </TasksDispatchContext.Provider>
     </TasksStateContext.Provider>
   );
 };
