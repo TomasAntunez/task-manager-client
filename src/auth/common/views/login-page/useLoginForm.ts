@@ -18,7 +18,7 @@ export const useLoginForm = () => {
 
 
   const loginUser = async (loginSchema: LoginSchema) => {
-    const { error } = await login(loginSchema);
+    const error = await login(loginSchema);
 
     if (error) {
       alertDispatch({
@@ -28,7 +28,7 @@ export const useLoginForm = () => {
       return;
     }
 
-    navigate(`/${ MainRoutes.TASKS }`);
+    navigate(`/${ MainRoutes.HOME }`);
   };
 
 

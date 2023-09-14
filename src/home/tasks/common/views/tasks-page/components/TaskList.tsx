@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { useTasksState } from '../../../hooks';
-import { Task } from './Task';
+import { Task } from './task';
 
 
 export const TaskList: FC = () => {
@@ -17,7 +17,7 @@ export const TaskList: FC = () => {
       width='100%'
     >
       {
-        (tasks.length !== 0) &&
+        (tasks.length !== 0) ? (
           tasks.map( task => (
             <Task
               key={task.id}
@@ -26,6 +26,11 @@ export const TaskList: FC = () => {
               description={task.description}
             />
           ))
+        ) : (
+          <Typography variant='h5' marginTop={5} align='center'>
+            You don't have any task
+          </Typography>
+        )
       }
     </Box>
   );

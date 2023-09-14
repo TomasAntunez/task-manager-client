@@ -16,7 +16,7 @@ export const tasksApi = {
   },
 
   async create(params: CreateTaskParams): Promise<CreateTaskResponse> {
-    const newTask = { id: uuid(), ...params };
+    const newTask = { ...params, id: uuid() };
     taskList = [...taskList, newTask];
     return newTask;
   },

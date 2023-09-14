@@ -22,6 +22,13 @@ export const alertReducer: Reducer<AlertState, AlertAction> = (state, action) =>
         msg: action.payload || 'There was a mistake'
       };
 
+    case AlertActionTypes.SHOW_SUCCESS:
+      return {
+        open: true,
+        severity: 'success',
+        msg: action.payload
+      }
+
     default:
       return state;
 

@@ -3,6 +3,8 @@ import { Card, CardContent, Divider, CardActions, Typography, Button, Box } from
 
 import { FontWeightPalette } from '@/common/config';
 
+import { useTask } from './useTask';
+
 
 interface TaskProps {
   id: string;
@@ -10,7 +12,11 @@ interface TaskProps {
   description: string;
 }
 
-export const Task: FC<TaskProps> = ({ title, description }) => {
+export const Task: FC<TaskProps> = ({ id, title, description }) => {
+
+  const { handleClickRemoveButton } = useTask( id );
+
+
   return (
     <Card sx={{ marginTop: 3 }}>
       <CardContent>
@@ -33,7 +39,12 @@ export const Task: FC<TaskProps> = ({ title, description }) => {
           <Button sx={{ marginRight: 3 }} size='small' variant='contained'>
             <Typography variant='body2'>Edit</Typography>
           </Button>
-          <Button size='small' color='error' variant='contained'>
+          <Button
+            size='small'
+            color='error'
+            variant='contained'
+            onClick={handleClickRemoveButton}
+          >
             <Typography variant='body2'>Remove</Typography>
           </Button>
         </Box>

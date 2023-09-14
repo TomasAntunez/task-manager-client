@@ -10,10 +10,11 @@ export enum TasksActionTypes {
 }
 
 type UpdateTaskPayload = Partial<Omit< TaskState, 'id' >> & { id: TaskId }
+type EditTaskPayload = Partial<TaskState>
 
 export type TasksAction =
   | { type: TasksActionTypes.SET_TASKS, payload: Array<TaskState> }
   | { type: TasksActionTypes.CREATE_TASK, payload: TaskState }
   | { type: TasksActionTypes.UPDATE_TASK, payload: UpdateTaskPayload }
   | { type: TasksActionTypes.REMOVE_TASK, payload: TaskId }
-  | { type: TasksActionTypes.EDIT_TASK, payload: UpdateTaskPayload }
+  | { type: TasksActionTypes.EDIT_TASK, payload: EditTaskPayload }

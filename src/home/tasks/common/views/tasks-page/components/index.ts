@@ -1,5 +1,5 @@
 
 export { TopBar } from './TopBar';
-export { TaskForm } from './TaskForm';
+export { TaskForm } from './task-form';
 export { TaskList } from './TaskList';
-export { Task } from './Task';
+export { Task } from './task';
